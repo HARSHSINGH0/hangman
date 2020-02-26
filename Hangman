@@ -1,14 +1,18 @@
 import random
-
 def play_again():
     answer=input('Do you want to play again? Yes/No :- ').lower()
-    if answer== "y" or "yes":
+    if answer=="y":
         play_game()
-    elif answer=="n" or "no":
+    elif answer=="n":
         exit()
+    elif answer=="no":
+        exit()
+    elif answer=="yes":
+        play_game()
     else:
         pass
-
+def exit():
+    quit()
 def get_word():
     words=['cat','dog','monkey','personality','ability','capability']
     return random.choice(words)
@@ -70,7 +74,7 @@ def play_game():
                 else:
                     status+='*'
             print(status)
-               
+        status=status.strip()
        
         if status == word:
             print('Excellent! You guessed the word right! Do you have what it takes to guess the next word? If yes try again!')
@@ -83,4 +87,3 @@ def play_game():
             play_again()
         
 play_game()
-
